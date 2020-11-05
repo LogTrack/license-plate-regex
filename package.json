@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "parcel index.html --open",
-    "build": "parcel build index.html",
+    "start": "serve dist/index.html",
+    "build": "webpack",
+    "build:watch": "webpack --watch",
     "test": "jest"
   },
   "jest": {
@@ -29,6 +30,7 @@
     "@babel/preset-env": "^7.12.1",
     "babel-jest": "^26.6.2",
     "jest": "^26.6.2",
+    "serve": "^11.3.2",
     "webpack": "^5.3.2",
     "webpack-cli": "^4.1.0"
   }
