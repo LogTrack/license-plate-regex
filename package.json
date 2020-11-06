@@ -5,8 +5,14 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack",
-    "test": "jest"
+    "test": "jest",
+    "lint": "jshint .",
+    "validate": "npm ls"
   },
+  "pre-commit": [
+    "build",
+    "test"
+  ],
   "jest": {
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
@@ -30,6 +36,7 @@
     "babel-jest": "^26.6.2",
     "jest": "^26.6.2",
     "path": "^0.12.7",
+    "precommit-hook": "^3.0.0",
     "webpack": "^5.3.2",
     "webpack-cli": "^4.1.0",
     "webpack-dev-server": "^3.11.0"

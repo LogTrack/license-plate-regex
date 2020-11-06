@@ -71,12 +71,12 @@ const finalData = {
 export const getCountryDetails = (code) => {
   if (!supportedCountryCodes[code]) { return null; }
   return finalData[code];
-}
+};
 
 export const isPlateValidForCountryCode = (plate, code) => {
   if (!supportedCountryCodes[code]) { return null; }
   return finalData[code].list.reduce((acc, item) => acc || item.regex.test(plate), false);
-}
+};
 
 export const fillTable = (tableId, templateId) => {
   const tableContainer = document.getElementById(tableId);
@@ -94,7 +94,7 @@ export const fillTable = (tableId, templateId) => {
                 <span class="plate">${item.example}</span>
               </div>`).join('')))
             .join('');
-}
+};
 
 (() => {
   const tableId = document?.currentScript?.getAttribute('table-id');
