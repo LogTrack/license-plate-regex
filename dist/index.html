@@ -2,6 +2,7 @@
 <html>
   <head>
     <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <title>License Plates Regex</title>
     <style type="text/css">
       body {
         font-family: 'Nunito', sans-serif;
@@ -36,19 +37,19 @@
   </head>
   <body>
     <h1>List of regex license plates per country</h1>
-    <table>
+    <table id="countryTables">
       <tr>
         <th>Country</th>
         <th>List of associated regex</th>
       </tr>
     </table>
 
-    <script id="country-list-item-template" type="text/template">
+    <script id="countryTables-template" type="text/template">
       <tr>
         <td>{{code}} / {{name}}</td>
         <td>{{regex}}</td>
       </tr>
     </script>
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="main.js" table-id="countryTables"></script>
   </body>
 </html>

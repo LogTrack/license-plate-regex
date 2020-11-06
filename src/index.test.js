@@ -12,4 +12,8 @@ test('isPlateValidForCountryCode', () => {
   expect(isPlateValidForCountryCode('KAZ-81', supportedCountryCodes.BE)).toBe(false);
   expect(isPlateValidForCountryCode('ABC-123', supportedCountryCodes.BE)).toBe(true);
   expect(isPlateValidForCountryCode('8-WKC-001', supportedCountryCodes.BE)).toBe(true);
+
+  expect(isPlateValidForCountryCode('AA 01', supportedCountryCodes.LU)).toBe(false);
+  expect(isPlateValidForCountryCode('AA 1234', supportedCountryCodes.LU)).toBe(true);
+  expect(isPlateValidForCountryCode('AA1234', supportedCountryCodes.LU)).toBe(true);
 });
