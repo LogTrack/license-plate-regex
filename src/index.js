@@ -7,12 +7,13 @@ const allCountries = getCodes().reduce((acc, code) => {
 
 export const supportedCountryCodes = {
   [allCountries.FR]: allCountries.FR,
+  [allCountries.BE]: allCountries.BE,
 };
 
 export const regexType = {
   OLD: 'OLD',
   CURRENT: 'CURRENT',
-  GARAGE: 'GARAGE',
+  PROFESSIONAL: 'PROFESSIONAL',
 };
 
 const finalData = {
@@ -36,7 +37,23 @@ const finalData = {
         type: regexType.OLD,
       }
     ]
-  }
+  },
+  [supportedCountryCodes.BE]: {
+    code: supportedCountryCodes.BE,
+    name: getName(supportedCountryCodes.BE),
+    list: [
+      {
+        regex: /\d-[A-Z]{3}-\d{3}/g,
+        example: '1-ABC-003',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /[A-Z]{3}-\d{3}/g,
+        example: 'KAZ-813',
+        type: regexType.OLD,
+      }
+    ]
+  },
 };
 
 export const getCountryDetails = (code) => {
