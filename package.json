@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "serve dist/index.html && webpack --watch",
+    "start": "webpack serve",
     "build": "webpack",
-    "build:watch": "webpack --watch",
     "test": "jest"
   },
   "jest": {
