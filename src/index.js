@@ -22,18 +22,18 @@ const finalData = {
     name: getName(supportedCountryCodes.FR),
     list: [
       {
-        regex: /[A-Z]{2}-\d{3}-[A-Z]{2}/g,
+        regex: /^[A-Z]{2}-\d{3}-[A-Z]{2}$/,
         example: 'AA-123-AA',
         type: regexType.CURRENT,
       },
       {
-        regex: /W-\d{3}-[A-Z]{2}/g,
+        regex: /^W-\d{3}-[A-Z]{2}$/,
         example: 'W-573-HJ',
         type: regexType.PROFESSIONAL,
       },
       {
-        regex: /\d{1,4}[A-Z]{2,3}(\d{2}|2A|2B)/g,
-        example: '123ABC45',
+        regex: /^\d{1,4}\s?[A-Z]{2,3}\s?(\d{2}|2A|2B)$/,
+        example: '1023 AC 45',
         type: regexType.OLD,
       }
     ]
@@ -43,12 +43,12 @@ const finalData = {
     name: getName(supportedCountryCodes.BE),
     list: [
       {
-        regex: /\d-[A-Z]{3}-\d{3}/g,
+        regex: /^\d-[A-Z]{3}-\d{3}$/,
         example: '1-ABC-003',
         type: regexType.CURRENT,
       },
       {
-        regex: /[A-Z]{3}-\d{3}/g,
+        regex: /^[A-Z]{3}-\d{3}$/,
         example: 'KAZ-813',
         type: regexType.OLD,
       }
