@@ -1,4 +1,5 @@
 import { getCodes, getName } from 'country-list';
+import './styles.scss';
 
 const allCountries = getCodes().reduce((acc, code) => {
   acc[code] = code;

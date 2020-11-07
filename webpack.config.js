@@ -13,7 +13,16 @@ module.exports = {
     hot: true,
   },
   module: {
-    rules: []
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader',
+        ],
+      },
+    ]
   },
   plugins: [
     new CopyWebpackPlugin({
