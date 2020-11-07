@@ -1,0 +1,13 @@
+language: node_js
+node_js:
+  - 10.14.2
+cache:
+  yarn: true
+jobs:
+  fast_finish: true
+
+install:
+  - yarn install
+script:
+  - yarn build
+  - yarn test
