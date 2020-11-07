@@ -11,6 +11,7 @@ export const supportedCountryCodes = {
   [allCountries.DE]: allCountries.DE,
   [allCountries.FR]: allCountries.FR,
   [allCountries.GB]: allCountries.GB,
+  [allCountries.IE]: allCountries.IE,
   [allCountries.LU]: allCountries.LU,
 };
 
@@ -107,6 +108,17 @@ const finalData = {
         example: 'M432 LGE',
         type: regexType.OLD,
       },
+    ]
+  },
+  [supportedCountryCodes.IE]: {
+    code: supportedCountryCodes.IE,
+    name: getName(supportedCountryCodes.IE),
+    list: [
+      {
+        regex: /^\d{2,3}-[A-Z]{1,2}-\d{1,6}$/,
+        example: '00-MO-7630',
+        type: regexType.CURRENT,
+      }
     ]
   },
   [supportedCountryCodes.LU]: {

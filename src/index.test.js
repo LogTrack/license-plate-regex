@@ -15,6 +15,8 @@ test('isPlateValidForCountryCode', () => {
   expect(isPlateValidForCountryCode('123ABC45', supportedCountryCodes.FR)).toBeTruthy();
   expect(isPlateValidForCountryCode('123 ABC 45', supportedCountryCodes.FR)).toBeTruthy();
   expect(isPlateValidForCountryCode('1023 AC 45', supportedCountryCodes.FR)).toBeTruthy();
+  
+  expect(isPlateValidForCountryCode('08-TN-231053', supportedCountryCodes.IE)).toBeTruthy();
 
   expect(isPlateValidForCountryCode('AA 01', supportedCountryCodes.LU)).toBeFalsy();
   expect(isPlateValidForCountryCode('AA 1234', supportedCountryCodes.LU)).toBeTruthy();
