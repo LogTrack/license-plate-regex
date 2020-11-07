@@ -12,6 +12,9 @@ module.exports = {
     port: 5000,
     hot: true,
   },
+  module: {
+    rules: []
+  },
   plugins: [
     new CopyWebpackPlugin({
       patterns: [
