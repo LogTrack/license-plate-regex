@@ -144,6 +144,12 @@ export const isPlateValidForCountryCode = (plate, code, type=[regexType.CURRENT]
   return finalData[code].list.filter(item => type.includes(item.type)).reduce((acc, item) => acc || item.regex.test(plate), false);
 };
 
+export const getCountryCodesForPlate = (plate, type=[regexType.CURRENT]) => {
+  return Object.values(finalData)
+    .filter(country => country.list.filter(item => type.includes(item.type)).reduce((acc, item) => acc || item.regex.test(plate), false))
+    .map(country => country.code);
+};
+
 export const fillTable = (tableId, templateId) => {
   const tableContainer = document.getElementById(tableId);
   if (!tableContainer) { throw new Error('tableId is null of is not present in the DOM!'); }
