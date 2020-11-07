@@ -8,6 +8,7 @@ const allCountries = getCodes().reduce((acc, code) => {
 
 export const supportedCountryCodes = {
   [allCountries.BE]: allCountries.BE,
+  [allCountries.DE]: allCountries.DE,
   [allCountries.FR]: allCountries.FR,
   [allCountries.LU]: allCountries.LU,
 };
@@ -32,6 +33,17 @@ const finalData = {
         regex: /^[A-Z]{3}-\d{3}$/,
         example: 'KAZ-813',
         type: regexType.OLD,
+      }
+    ]
+  },
+  [supportedCountryCodes.DE]: {
+    code: supportedCountryCodes.DE,
+    name: getName(supportedCountryCodes.DE),
+    list: [
+      {
+        regex: /^[A-Z]{1,3}\s?[A-Z]{1,2}\s?\d{1,4}$/,
+        example: 'KA PA 777',
+        type: regexType.CURRENT,
       }
     ]
   },
