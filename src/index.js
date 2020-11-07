@@ -139,9 +139,9 @@ export const getCountryDetails = (code) => {
   return finalData[code];
 };
 
-export const isPlateValidForCountryCode = (plate, code) => {
+export const isPlateValidForCountryCode = (plate, code, type=[regexType.CURRENT]) => {
   if (!supportedCountryCodes[code]) { return null; }
-  return finalData[code].list.reduce((acc, item) => acc || item.regex.test(plate), false);
+  return finalData[code].list.filter(item => type.includes(item.type)).reduce((acc, item) => acc || item.regex.test(plate), false);
 };
 
 export const fillTable = (tableId, templateId) => {
