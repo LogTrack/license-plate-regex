@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+    <title>License Plates Regex</title>
+    <style type="text/css">
+      body {
+        font-family: 'Nunito', sans-serif;
+        text-align: center;
+        background-color: #E3E3E3;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th, td {
+        padding: 1rem;
+      }
+      th:not(:last-child), td:not(:last-child) {
+        border-right: 1px solid #AAAAAA;
+      }
+      .regex {
+        background-color: #FFAAAA;
+        padding: .2rem .5rem;
+        margin: .5rem;
+        display: inline-block;
+      }
+      .plate {
+        border: 1px solid #333333;
+        background-color: #FFFFFF;
+        border-radius: 4px;
+        padding: .2rem .5rem;
+        margin: .5rem;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>List of regex license plates per country</h1>
+    <table id="countryTables">
+      <tr>
+        <th>Country</th>
+        <th>List of associated regex</th>
+      </tr>
+    </table>
+
+    <script id="countryTables-template" type="text/template">
+      <tr>
+        <td>{{code}} / {{name}}</td>
+        <td>{{regex}}</td>
+      </tr>
+    </script>
+    <script type="text/javascript" src="main.js" table-id="countryTables"></script>
+  </body>
+</html>

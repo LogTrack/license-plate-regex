@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "webpack serve",
+    "start": "webpack && webpack serve",
     "build": "webpack",
     "test": "jest",
     "lint": "jshint .",
@@ -34,6 +34,7 @@
   "devDependencies": {
     "@babel/preset-env": "^7.12.1",
     "babel-jest": "^26.6.2",
+    "copy-webpack-plugin": "^6.3.0",
     "jest": "^26.6.2",
     "path": "^0.12.7",
     "precommit-hook": "^3.0.0",

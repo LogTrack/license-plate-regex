@@ -103,5 +103,6 @@ export const fillTable = (tableId, templateId) => {
   }
 })();
 
-export default finalData;
+window.fillTable = fillTable;
 
+export default finalData;
