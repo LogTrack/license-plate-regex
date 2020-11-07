@@ -10,13 +10,13 @@ export const supportedCountryCodes = {
   [allCountries.BE]: allCountries.BE,
   [allCountries.DE]: allCountries.DE,
   [allCountries.FR]: allCountries.FR,
+  [allCountries.GB]: allCountries.GB,
   [allCountries.LU]: allCountries.LU,
 };
 
 export const regexType = {
   OLD: 'OLD',
   CURRENT: 'CURRENT',
-  PROFESSIONAL: 'PROFESSIONAL',
 };
 
 const finalData = {
@@ -59,13 +59,54 @@ const finalData = {
       {
         regex: /^W-\d{3}-[A-Z]{2}$/,
         example: 'W-573-HJ',
-        type: regexType.PROFESSIONAL,
+        type: regexType.CURRENT,
       },
       {
         regex: /^\d{1,4}\s?[A-Z]{2,3}\s?(\d{2}|2A|2B)$/,
         example: '1023 AC 45',
         type: regexType.OLD,
       }
+    ]
+  },
+  [supportedCountryCodes.GB]: {
+    code: supportedCountryCodes.GB,
+    name: getName(supportedCountryCodes.GB),
+    list: [
+      {
+        regex: /^[A-Z]{2}\d{2}\s?[A-Z]{3}$/,
+        example: 'YR53 JEP',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[A-Z]{1,3}\s?\d{1,4}$/,
+        example: 'VCZ 6382',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[A-Z]{1,2}\s?\d{1,4}$/,
+        example: 'HG 8765',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-Z]{3}\s?\d{1,3}$/,
+        example: 'TYA 990',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^\d{1,3}\s?[A-Z]{3}$/,
+        example: '883 XUL',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-Z]{3}\s?\d{1,3}\s?[A-Z]$/,
+        example: 'TVR 765K',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-Z]\d{1,3}\s?[A-Z]{1,3}$/,
+        example: 'M432 LGE',
+        type: regexType.OLD,
+      },
     ]
   },
   [supportedCountryCodes.LU]: {
