@@ -8,6 +8,13 @@ const allCountries = getCodes().reduce((acc, code) => {
 
 export const supportedCountryCodes = {
   [allCountries.AD]: allCountries.AD,
+  [allCountries.AE]: allCountries.AE,
+  [allCountries.AF]: allCountries.AF,
+  [allCountries.AG]: allCountries.AG,
+  [allCountries.AI]: allCountries.AI,
+  [allCountries.AL]: allCountries.AL,
+  [allCountries.AM]: allCountries.AM,
+  [allCountries.AO]: allCountries.AO,
   [allCountries.AT]: allCountries.AT,
   [allCountries.BE]: allCountries.BE,
   [allCountries.CH]: allCountries.CH,
@@ -58,6 +65,138 @@ const finalData = {
       {
         regex: /^[A-Z]{2}-\d{2}$/,
         example: 'RA-15',
+        type: regexType.OLD,
+      },
+    ]
+  },
+  [supportedCountryCodes.AE]: {
+    code: supportedCountryCodes.AE,
+    name: getName(supportedCountryCodes.AE),
+    list: [
+      {
+        regex: /^\d{1,2}\s\d{1,5}$/,
+        example: '20 10234',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^(A|B|C|D|E|H)\s?\d{1,5}$/,
+        example: 'B 12345',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[A-Z]{1,2}\s\d{1,5}$/,
+        example: 'A 10234',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^([A-Z]\s?\d{1,5})|(\d{1,5}\s?[A-Z])$/,
+        example: '12345 B',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[A-Z]?\s?\d{1,5}\s?[A-Z]?$/,
+        example: 'B 10234',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^(1|2|3)\s\d{1,5}$/,
+        example: '2 14567',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^([A-I]|X)\s\d{1,5}$/,
+        example: 'B 12345',
+        type: regexType.CURRENT,
+      },
+    ]
+  },
+  [supportedCountryCodes.AF]: {
+    code: supportedCountryCodes.AF,
+    name: getName(supportedCountryCodes.AF),
+    list: [
+      {
+        regex: /^[A-Z]{3}\s((\d{3}\s?M)|(\d{5}\s?(B|L|PRV|T)))$/,
+        example: 'KBL 12345 B',
+        type: regexType.CURRENT,
+      },
+    ]
+  },
+  [supportedCountryCodes.AG]: {
+    code: supportedCountryCodes.AG,
+    name: getName(supportedCountryCodes.AG),
+    list: [
+      {
+        regex: /^PM\s?\d{1,3}\s\d{4}$/,
+        example: 'PM363 1938',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^AG\s?\d{1,4}$/,
+        example: 'AG 8593',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^(H|P|R)A?\s?\d{1,4}$/,
+        example: 'RA 8893',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^(A\s?\d{1,5})|((AT|SC)\s?\d{1,3})|((C|R|TX)\s?\d{1,4})$/,
+        example: 'TX 916',
+        type: regexType.CURRENT,
+      },
+    ]
+  },
+  [supportedCountryCodes.AI]: {
+    code: supportedCountryCodes.AI,
+    name: getName(supportedCountryCodes.AI),
+    list: [
+      {
+        regex: /^A\s?\d{3}$/,
+        example: 'A 999',
+        type: regexType.CURRENT,
+      },
+    ]
+  },
+  [supportedCountryCodes.AL]: {
+    code: supportedCountryCodes.AL,
+    name: getName(supportedCountryCodes.AL),
+    list: [
+      {
+        regex: /^[A-Z]{2}\s\d{3}\s?[A-Z]{2}$/,
+        example: 'AA 000 AA',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[A-Z]{2}\s\d{4}\s?[A-Z]$/,
+        example: 'TR 1474 M',
+        type: regexType.OLD,
+      },
+    ]
+  },
+  [supportedCountryCodes.AM]: {
+    code: supportedCountryCodes.AM,
+    name: getName(supportedCountryCodes.AM),
+    list: [
+      {
+        regex: /^\d{2}\s?([^0-9]){2}\s?\d{3}$/,
+        example: '01 AD 234',
+        type: regexType.CURRENT,
+      },
+    ]
+  },
+  [supportedCountryCodes.AO]: {
+    code: supportedCountryCodes.AO,
+    name: getName(supportedCountryCodes.AO),
+    list: [
+      {
+        regex: /^[A-Z]{2}-\d{2}-\d{2}-[A-Z]{2}$/,
+        example: 'LD-38-75-CL',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[A-Z]{3}-\d{2}-\d{2}$/,
+        example: 'AAE-62-63',
         type: regexType.OLD,
       },
     ]
