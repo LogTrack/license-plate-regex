@@ -8,17 +8,21 @@ const allCountries = getCodes().reduce((acc, code) => {
 
 export const supportedCountryCodes = {
   [allCountries.AD]: allCountries.AD,
+  [allCountries.AT]: allCountries.AT,
   [allCountries.BE]: allCountries.BE,
   [allCountries.CH]: allCountries.CH,
   [allCountries.DE]: allCountries.DE,
   [allCountries.DK]: allCountries.DK,
+  [allCountries.ES]: allCountries.ES,
   [allCountries.FR]: allCountries.FR,
   [allCountries.GB]: allCountries.GB,
   [allCountries.IE]: allCountries.IE,
   [allCountries.IT]: allCountries.IT,
   [allCountries.LI]: allCountries.LI,
-  [allCountries.NL]: allCountries.NL,
   [allCountries.LU]: allCountries.LU,
+  [allCountries.NL]: allCountries.NL,
+  [allCountries.PL]: allCountries.PL,
+  [allCountries.PT]: allCountries.PT,
 };
 
 export const regexType = {
@@ -56,6 +60,17 @@ const finalData = {
         example: 'RA-15',
         type: regexType.OLD,
       },
+    ]
+  },
+  [supportedCountryCodes.AT]: {
+    code: supportedCountryCodes.AT,
+    name: getName(supportedCountryCodes.AT),
+    list: [
+      {
+        regex: /^[A-Z]{1,2}\s([A-Z0-9]\s?){3,6}$/,
+        example: 'G 527 GH',
+        type: regexType.CURRENT,
+      }
     ]
   },
   [supportedCountryCodes.BE]: {
@@ -104,6 +119,22 @@ const finalData = {
         regex: /^[A-Z]{2}\s?\d{5}$/,
         example: 'XM32345',
         type: regexType.CURRENT,
+      }
+    ]
+  },
+  [supportedCountryCodes.ES]: {
+    code: supportedCountryCodes.ES,
+    name: getName(supportedCountryCodes.ES),
+    list: [
+      {
+        regex: /^\d{4}\s?[A-Z]{3}$/,
+        example: '5776 CNS',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[A-Z]{1,2}\s?-?\d{4}\s?-?[A-Z]{1,2}$/,
+        example: 'M-6320-YN',
+        type: regexType.OLD,
       }
     ]
   },
@@ -207,6 +238,17 @@ const finalData = {
       }
     ]
   },
+  [supportedCountryCodes.LU]: {
+    code: supportedCountryCodes.LU,
+    name: getName(supportedCountryCodes.LU),
+    list: [
+      {
+        regex: /^[A-Z]{2}\s?\d{4}$/,
+        example: 'KS 9412',
+        type: regexType.CURRENT,
+      }
+    ]
+  },
   [supportedCountryCodes.NL]: {
     code: supportedCountryCodes.NL,
     name: getName(supportedCountryCodes.NL),
@@ -273,14 +315,45 @@ const finalData = {
       }
     ]
   },
-  [supportedCountryCodes.LU]: {
-    code: supportedCountryCodes.LU,
-    name: getName(supportedCountryCodes.LU),
+  [supportedCountryCodes.PL]: {
+    code: supportedCountryCodes.PL,
+    name: getName(supportedCountryCodes.PL),
     list: [
       {
-        regex: /^[A-Z]{2}\s?\d{4}$/,
-        example: 'KS 9412',
+        regex: /^[A-Z]{2,3}\s[A-Z0-9]{4,5}$/,
+        example: 'ERA 75TM',
         type: regexType.CURRENT,
+      },
+      {
+        regex: /^([A-Z]{2}\s\d{2}(\d|[A-Z]))|([A-Z]{3}\s\d(\d|[A-Z]|\.))|([A-Z]{3}\s([A-Z]|\d))$/,
+        example: 'CBR 7C',
+        type: regexType.CURRENT,
+      }
+    ]
+  },
+  [supportedCountryCodes.PT]: {
+    code: supportedCountryCodes.PT,
+    name: getName(supportedCountryCodes.PT),
+    list: [
+      {
+        regex: /^[A-Z]{2}-\d{2}-[A-Z]{2}$/,
+        example: 'AA-01-AA',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^\d{2}-[A-Z]{2}-\d{2}$/,
+        example: '00-AA-00',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^\d{2}-\d{2}-[A-Z]{2}$/,
+        example: '00-00-AA',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-Z]{2}-\d{2}-\d{2}$/,
+        example: 'AA-00-00',
+        type: regexType.OLD,
       }
     ]
   },
