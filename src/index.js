@@ -7,11 +7,17 @@ const allCountries = getCodes().reduce((acc, code) => {
 }, {});
 
 export const supportedCountryCodes = {
+  [allCountries.AD]: allCountries.AD,
   [allCountries.BE]: allCountries.BE,
+  [allCountries.CH]: allCountries.CH,
   [allCountries.DE]: allCountries.DE,
+  [allCountries.DK]: allCountries.DK,
   [allCountries.FR]: allCountries.FR,
   [allCountries.GB]: allCountries.GB,
   [allCountries.IE]: allCountries.IE,
+  [allCountries.IT]: allCountries.IT,
+  [allCountries.LI]: allCountries.LI,
+  [allCountries.NL]: allCountries.NL,
   [allCountries.LU]: allCountries.LU,
 };
 
@@ -21,6 +27,37 @@ export const regexType = {
 };
 
 const finalData = {
+  [supportedCountryCodes.AD]: {
+    code: supportedCountryCodes.AD,
+    name: getName(supportedCountryCodes.AD),
+    list: [
+      {
+        regex: /^[A-Z]\s?\d{4}$/,
+        example: 'L 3705',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[A-Z]\s?\d{2}$/,
+        example: 'A78',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^\d{5}$/,
+        example: '27604',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-Z]{3}-\d{3}$/,
+        example: 'AND-438',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-Z]{2}-\d{2}$/,
+        example: 'RA-15',
+        type: regexType.OLD,
+      },
+    ]
+  },
   [supportedCountryCodes.BE]: {
     code: supportedCountryCodes.BE,
     name: getName(supportedCountryCodes.BE),
@@ -37,6 +74,17 @@ const finalData = {
       }
     ]
   },
+  [supportedCountryCodes.CH]: {
+    code: supportedCountryCodes.CH,
+    name: getName(supportedCountryCodes.CH),
+    list: [
+      {
+        regex: /^[A-Z]{2}\s?(\d\s?){1,6}$/,
+        example: 'ZH 522 802',
+        type: regexType.CURRENT,
+      }
+    ]
+  },
   [supportedCountryCodes.DE]: {
     code: supportedCountryCodes.DE,
     name: getName(supportedCountryCodes.DE),
@@ -48,18 +96,24 @@ const finalData = {
       }
     ]
   },
+  [supportedCountryCodes.DK]: {
+    code: supportedCountryCodes.DK,
+    name: getName(supportedCountryCodes.DK),
+    list: [
+      {
+        regex: /^[A-Z]{2}\s?\d{5}$/,
+        example: 'XM32345',
+        type: regexType.CURRENT,
+      }
+    ]
+  },
   [supportedCountryCodes.FR]: {
     code: supportedCountryCodes.FR,
     name: getName(supportedCountryCodes.FR),
     list: [
       {
-        regex: /^[A-Z]{2}-\d{3}-[A-Z]{2}$/,
+        regex: /^([A-Z]{2}|W)-\d{3}-[A-Z]{2}$/,
         example: 'AA-123-AA',
-        type: regexType.CURRENT,
-      },
-      {
-        regex: /^W-\d{3}-[A-Z]{2}$/,
-        example: 'W-573-HJ',
         type: regexType.CURRENT,
       },
       {
@@ -117,6 +171,104 @@ const finalData = {
       {
         regex: /^\d{2,3}-[A-Z]{1,2}-\d{1,6}$/,
         example: '00-MO-7630',
+        type: regexType.CURRENT,
+      }
+    ]
+  },
+  [supportedCountryCodes.IT]: {
+    code: supportedCountryCodes.IT,
+    name: getName(supportedCountryCodes.IT),
+    list: [
+      {
+        regex: /^[A-Z]{2}\s?\d{3}[A-Z]{2}$/,
+        example: 'CZ 898NF',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[A-Z]{2}\s?\d{3}\s[A-Z]{2}$/,
+        example: 'AA 843 BC',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^([A-Z]{2}|Roma)\s?\d{2}\s?\d{4}$/,
+        example: 'Roma 12 5504',
+        type: regexType.OLD,
+      }
+    ]
+  },
+  [supportedCountryCodes.LI]: {
+    code: supportedCountryCodes.LI,
+    name: getName(supportedCountryCodes.LI),
+    list: [
+      {
+        regex: /^[A-Z]{2}\s?\d{1,5}$/,
+        example: 'FL 6107',
+        type: regexType.CURRENT,
+      }
+    ]
+  },
+  [supportedCountryCodes.NL]: {
+    code: supportedCountryCodes.NL,
+    name: getName(supportedCountryCodes.NL),
+    list: [
+      {
+        regex: /^[A-Z]{2}-\d{2}-\d{2}$/,
+        example: 'XX-99-99',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^\d{2}-\d{2}-[A-Z]{2}$/,
+        example: '99-99-XX',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^\d{2}-[A-Z]{2}-\d{2}$/,
+        example: '99-XX-99',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-Z]{2}-\d{2}-[A-Z]{2}$/,
+        example: 'XX-99-XX',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-Z]{2}-[A-Z]{2}-\d{2}$/,
+        example: 'XX-XX-99',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^\d{2}-[A-Z]{2}-[A-Z]{2}$/,
+        example: '99-XX-XX',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^\d{2}-[A-Z]{3}-\d$/,
+        example: '99-XXX-9',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^\d-[A-Z]{3}-\d{2}$/,
+        example: '9-XXX-99',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[A-Z]{2}-\d{3}-[A-Z]$/,
+        example: 'XX-999-X',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[A-Z]-\d{3}-[A-Z]{2}$/,
+        example: 'X-999-XX',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[A-Z]{3}-\d{2}-[A-Z]$/,
+        example: 'XXX-99-X',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^\d-[A-Z]{2}-\d{3}$/,
+        example: '9-XX-999',
         type: regexType.CURRENT,
       }
     ]
