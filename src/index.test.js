@@ -1,5 +1,21 @@
 import { expect, test, describe } from '@jest/globals';
-import data, { isPlateValidForCountryCode, getCountryCodesForPlate, regexType } from './index.js';
+import data, { isPlateValidForCountryCode, getCountryCodesForPlate, regexType, supportedCountryCodes } from './index.js';
+
+describe('Validate Data',() => {
+  test('Verify that supportedCountryCodes are all inside the data', () => {
+    expect(Object.keys(supportedCountryCodes).length).toEqual(Object.keys(data).length);
+
+    Object.keys(supportedCountryCodes).forEach(countryCode => {
+      expect(data[countryCode]).not.toBeNull();
+    });
+  });
+
+  test('Verify that all countries have at least one CURRENT plate format', () => {
+    Object.keys(supportedCountryCodes).forEach(countryCode => {
+      expect(data[countryCode].list.filter(item => item.type === regexType.CURRENT).length).toBeGreaterThanOrEqual(1);
+    });
+  });
+});
 
 describe('Data examples', () => {
   Object.values(data).forEach(countryData => {
