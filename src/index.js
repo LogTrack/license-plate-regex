@@ -15,7 +15,11 @@ export const supportedCountryCodes = {
   [allCountries.AL]: allCountries.AL,
   [allCountries.AM]: allCountries.AM,
   [allCountries.AO]: allCountries.AO,
+  [allCountries.AQ]: allCountries.AQ,
+  [allCountries.AR]: allCountries.AR,
+  [allCountries.AS]: allCountries.AS,
   [allCountries.AT]: allCountries.AT,
+  [allCountries.AU]: allCountries.AU,
   [allCountries.BE]: allCountries.BE,
   [allCountries.CH]: allCountries.CH,
   [allCountries.DE]: allCountries.DE,
@@ -201,6 +205,59 @@ const finalData = {
       },
     ]
   },
+  [supportedCountryCodes.AQ]: {
+    code: supportedCountryCodes.AQ,
+    name: getName(supportedCountryCodes.AQ),
+    list: [
+      {
+        regex: /^\d{2}$/,
+        example: '39',
+        type: regexType.CURRENT,
+      },
+    ]
+  },
+  [supportedCountryCodes.AR]: {
+    code: supportedCountryCodes.AR,
+    name: getName(supportedCountryCodes.AR),
+    list: [
+      {
+        regex: /^[A-Z]\s?(\d\s?)?\d{6}$/,
+        example: 'B 1 225945',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-Z]{3}(\s|D|T)?\d{3}$/,
+        example: 'NVZ 087',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-Z]{2}\s?\d{3}\s?[A-Z]{2}$/,
+        example: 'AA 000 AB',
+        type: regexType.CURRENT,
+      },
+    ]
+  },
+  [supportedCountryCodes.AS]: {
+    code: supportedCountryCodes.AS,
+    name: getName(supportedCountryCodes.AS),
+    list: [
+      {
+        regex: /^\d{3}$/,
+        example: '893',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^\d-\d{3}$/,
+        example: '4-205',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^\d{4}$/,
+        example: '5511',
+        type: regexType.CURRENT,
+      },
+    ]
+  },
   [supportedCountryCodes.AT]: {
     code: supportedCountryCodes.AT,
     name: getName(supportedCountryCodes.AT),
@@ -210,6 +267,108 @@ const finalData = {
         example: 'G 527 GH',
         type: regexType.CURRENT,
       }
+    ]
+  },
+  [supportedCountryCodes.AU]: {
+    code: supportedCountryCodes.AU,
+    name: getName(supportedCountryCodes.AU),
+    list: [
+      {
+        regex: /^(Y[A-Z]{2}-\d{2}[A-Z])|(T\s?\d{4}\s?[A-Z])|(A-\d{4})$/,
+        example: 'YOX-00A',
+        type: regexType.CURRENT,
+        description: 'Australian Capital Territory'
+      },
+      {
+        regex: /^([A-Z]{2}-\d{2}-[A-Z]{2})|(T[A-Z]-\d{2}-[A-Z]{2})|((K|E)[A-Z]{2}-\d{2})$/,
+        example: 'CZ-00-QB',
+        type: regexType.CURRENT,
+        description: 'New South Wales'
+      },
+      {
+        regex: /^(C[A-Z]-\d{2}-[A-Z]{2})|(T[A-Z]-\d{4})|([A-Z]-\d{4})$/,
+        example: 'CE-21-AA',
+        type: regexType.CURRENT,
+        description: 'Northern Territory'
+      },
+      {
+        regex: /^(\d{3}-[A-Z]{2}\d)|(\d{3}-U[A-Z]{2})|([A-Z]{2}-\d{4})|(\d{3}-[A-Z]{2})$/,
+        example: '000-AL5',
+        type: regexType.CURRENT,
+        description: 'Queensland'
+      },
+      {
+        regex: /^(S\d{3}-[A-Z]{3})|(S\d{3}-T[A-Z]{2})|(S\d{2}-[A-Z]{3})$/,
+        example: 'S000-CGU',
+        type: regexType.CURRENT,
+        description: 'South Australia'
+      },
+      {
+        regex: /^([A-Z]\s\d{2}\s[A-Z]{2})|([A-Z]\d{3}[A-Z])$/,
+        example: 'J 00 EX',
+        type: regexType.CURRENT,
+        description: 'Tasmania'
+      },
+      {
+        regex: /^(\d[A-Z]{2}-\d[A-Z]{2})|([A-Z]\d{2}-\d{3})|(\d{4}-S\d)|(\d{5}-A)|(2[A-Z]-\d[A-Z]{2})$/,
+        example: '1SR-1AA',
+        type: regexType.CURRENT,
+        description: 'Victoria'
+      },
+      {
+        regex: /^(1[A-Z]{3}-\d{3})|(1T[A-Z]{2}-\d{3})|(1[A-Z]{2}-\d{3})$/,
+        example: '1HDO-000',
+        type: regexType.CURRENT,
+        description: 'Western Australia'
+      },
+      {
+        regex: /^Y[A-Z]{2}-\d{3}$/,
+        example: 'YZZ-999',
+        type: regexType.OLD,
+        description: 'Australian Capital Territory - Old'
+      },
+      {
+        regex: /^[A-Z]{3}-\d{3}$/,
+        example: 'ZLF-999',
+        type: regexType.OLD,
+        description: 'New South Wales - Old'
+      },
+      {
+        regex: /^\d{1,3}(-\d{1,3})?$/,
+        example: '999-999',
+        type: regexType.OLD,
+        description: 'Northern Territory - Old'
+      },
+      {
+        regex: /^(N|O|P)[A-Z]{2}-\d{3}$/,
+        example: 'PZZ-999',
+        type: regexType.OLD,
+        description: 'Queensland - Old'
+      },
+      {
+        regex: /^[A-Z]{3}-\d{3}$/,
+        example: 'XUN-299',
+        type: regexType.OLD,
+        description: 'South Australia - Old'
+      },
+      {
+        regex: /^(W[A-Z]{2}-\d{3})|([A-Z]-\d{4})$/,
+        example: 'WZZ-999',
+        type: regexType.OLD,
+        description: 'Tasmania - Old'
+      },
+      {
+        regex: /^[A-Z]{3}-\d{3}$/,
+        example: 'IZZ-999',
+        type: regexType.OLD,
+        description: 'Victoria - Old'
+      },
+      {
+        regex: /^([U-X][A-Z]{2}-\d{3})|(\d[A-Z]{2}-\d{3})$/,
+        example: '6AA-000',
+        type: regexType.OLD,
+        description: 'Western Australia - Old'
+      },
     ]
   },
   [supportedCountryCodes.BE]: {
@@ -282,9 +441,15 @@ const finalData = {
     name: getName(supportedCountryCodes.FR),
     list: [
       {
-        regex: /^([A-Z]{2}|W)-\d{3}-[A-Z]{2}$/,
+        regex: /^[A-Z]{2}-\d{3}-[A-Z]{2}$/,
         example: 'AA-123-AA',
         type: regexType.CURRENT,
+      },
+      {
+        regex: /^W-\d{3}-[A-Z]{2}$/,
+        example: 'W-123-AA',
+        type: regexType.CURRENT,
+        description: 'Car dealers'
       },
       {
         regex: /^\d{1,4}\s?[A-Z]{2,3}\s?(\d{2}|2A|2B)$/,
