@@ -20,6 +20,12 @@ export const supportedCountryCodes = {
   [allCountries.AS]: allCountries.AS,
   [allCountries.AT]: allCountries.AT,
   [allCountries.AU]: allCountries.AU,
+  [allCountries.AX]: allCountries.AX,
+  [allCountries.AW]: allCountries.AW,
+  [allCountries.AZ]: allCountries.AZ,
+  [allCountries.BA]: allCountries.BA,
+  [allCountries.BB]: allCountries.BB,
+  [allCountries.BD]: allCountries.BD,
   [allCountries.BE]: allCountries.BE,
   [allCountries.CH]: allCountries.CH,
   [allCountries.DE]: allCountries.DE,
@@ -369,6 +375,87 @@ const finalData = {
         type: regexType.OLD,
         description: 'Western Australia - Old'
       },
+    ]
+  },
+  [supportedCountryCodes.AW]: {
+    code: supportedCountryCodes.AW,
+    name: getName(supportedCountryCodes.AW),
+    list: [
+      {
+        regex: /^\d{4}-[A-Z]{1,3}$/,
+        example: '1234-A',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-Z]{1,3}-\d{4}$/,
+        example: 'MFA-1234',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-Z]{1,3}-\d{5}$/,
+        example: 'V-12345',
+        type: regexType.CURRENT,
+      }
+    ]
+  },
+  [supportedCountryCodes.AX]: {
+    code: supportedCountryCodes.AX,
+    name: getName(supportedCountryCodes.AX),
+    list: [
+      {
+        regex: /^(Å|A)L[A-Z]\s?\d{1,3}$/,
+        example: 'ÅLG 798',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^(Å|A)L\s?\d{5}$/,
+        example: 'ÅL 12345',
+        type: regexType.CURRENT,
+      }
+    ]
+  },
+  [supportedCountryCodes.AZ]: {
+    code: supportedCountryCodes.AZ,
+    name: getName(supportedCountryCodes.AZ),
+    list: [
+      {
+        regex: /^\d{2}(-|\s)?[A-Z]{2}(-|\s)?\d{3}$/,
+        example: '10-JA-234',
+        type: regexType.CURRENT,
+      }
+    ]
+  },
+  [supportedCountryCodes.BA]: {
+    code: supportedCountryCodes.BA,
+    name: getName(supportedCountryCodes.BA),
+    list: [
+      {
+        regex: /^[A-ЯЁ]\d{2}-[A-ЯЁ]-\d{3}$/,
+        example: 'M48-E-415',
+        type: regexType.CURRENT,
+      }
+    ]
+  },
+  [supportedCountryCodes.BB]: {
+    code: supportedCountryCodes.BB,
+    name: getName(supportedCountryCodes.BB),
+    list: [
+      {
+        regex: /^[A-Z]{1,2}\s\d{1,4}$/,
+        example: 'L 4159',
+        type: regexType.CURRENT,
+      }
+    ]
+  },
+  [supportedCountryCodes.BD]: {
+    code: supportedCountryCodes.BD,
+    name: getName(supportedCountryCodes.BD),
+    list: [
+      {
+        regex: /^[A-Zঀ-৯\s]+-[A-Za-zঀ-৯]{2,3}(\s|-)[0-9০-৯]{2}-[0-9০-৯]{4}$/,
+        example: 'ঢাকা মেট্রো-ga 33-0911',
+        type: regexType.CURRENT,
+      }
     ]
   },
   [supportedCountryCodes.BE]: {
