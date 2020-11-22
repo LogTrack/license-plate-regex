@@ -27,6 +27,9 @@ export const supportedCountryCodes = {
   [allCountries.BB]: allCountries.BB,
   [allCountries.BD]: allCountries.BD,
   [allCountries.BE]: allCountries.BE,
+  [allCountries.BF]: allCountries.BF,
+  [allCountries.BG]: allCountries.BG,
+  [allCountries.BH]: allCountries.BH,
   [allCountries.CH]: allCountries.CH,
   [allCountries.DE]: allCountries.DE,
   [allCountries.DK]: allCountries.DK,
@@ -472,6 +475,89 @@ const finalData = {
         example: 'KAZ-813',
         type: regexType.OLD,
       }
+    ]
+  },
+  [supportedCountryCodes.BF]: {
+    code: supportedCountryCodes.BF,
+    name: getName(supportedCountryCodes.BF),
+    list: [
+      {
+        regex: /^\d{2}\s?[A-Z]{1,2}\s?\d{4}$/,
+        example: '11 G 2437',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[A-Z]\s\d{4}\s[A-Z]{2}$/,
+        example: 'B 3534 BF',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^\d{2}-[A-Z]-\d{4}-[A-Z]$/,
+        example: '24-C-0092-V',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-Z]\d{3}\s?[A-Z]{2}\d{2}$/,
+        example: 'B386 HV07',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-Z]\d{4}(\s|-)[A-Z]-?[A-Z]\s?\d$/,
+        example: 'B4175 HV3',
+        type: regexType.OLD,
+      }
+    ]
+  },
+  [supportedCountryCodes.BG]: {
+    code: supportedCountryCodes.BG,
+    name: getName(supportedCountryCodes.BG),
+    list: [
+      {
+        regex: /^[A-ZЀ-ӿ]{1,2}\s\d{4}\s?[A-ZЀ-ӿ]{2}$/,
+        example: 'AУ 3362MB',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[A-ZЀ-ӿ]{1,2}\s\d{2}-\d{2}$/,
+        example: 'CУ 89-75',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-ZЀ-ӿ]{1,2}-([A-ZЀ-ӿ]-)?\d{4}$/,
+        example: 'CУ-6798',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-ZЀ-ӿ]{3}-\d{4}$/,
+        example: 'CУУ-6798',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-ZЀ-ӿ]{1,2}\s\d{4}\s[A-ZЀ-ӿ]{1,2}$/,
+        example: 'CУ 8975 CA',
+        type: regexType.OLD,
+      },
+    ]
+  },
+  [supportedCountryCodes.BH]: {
+    code: supportedCountryCodes.BH,
+    name: getName(supportedCountryCodes.BH),
+    list: [
+      {
+        regex: /^\d{5,6}$/,
+        example: '49165',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[ء-ي]\d{3}$/,
+        example: 'ي191',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[ء-ي]\d{3}[ء-ي]$/,
+        example: 'د191د',
+        type: regexType.OLD,
+      },
     ]
   },
   [supportedCountryCodes.CH]: {
