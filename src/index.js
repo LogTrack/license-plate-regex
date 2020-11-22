@@ -33,19 +33,27 @@ export const supportedCountryCodes = {
   [allCountries.BI]: allCountries.BI,
   [allCountries.BJ]: allCountries.BJ,
   [allCountries.BL]: allCountries.BL,
+  [allCountries.BM]: allCountries.BM,
   [allCountries.CH]: allCountries.CH,
   [allCountries.DE]: allCountries.DE,
   [allCountries.DK]: allCountries.DK,
   [allCountries.ES]: allCountries.ES,
+  [allCountries.FK]: allCountries.FK,
   [allCountries.FR]: allCountries.FR,
   [allCountries.GB]: allCountries.GB,
+  [allCountries.GI]: allCountries.GI,
   [allCountries.IE]: allCountries.IE,
   [allCountries.IT]: allCountries.IT,
+  [allCountries.KY]: allCountries.KY,
   [allCountries.LI]: allCountries.LI,
   [allCountries.LU]: allCountries.LU,
+  [allCountries.MS]: allCountries.MS,
   [allCountries.NL]: allCountries.NL,
   [allCountries.PL]: allCountries.PL,
   [allCountries.PT]: allCountries.PT,
+  [allCountries.TC]: allCountries.TC,
+  [allCountries.SH]: allCountries.SH,
+  [allCountries.VG]: allCountries.VG,
 };
 
 export const regexType = {
@@ -171,6 +179,11 @@ const finalData = {
         regex: /^A\s?\d{3}$/,
         example: 'A 999',
         type: regexType.CURRENT,
+      },
+      {
+        regex: /^A\s?\d{4}$/,
+        example: 'A 9999',
+        type: regexType.OLD,
       },
     ]
   },
@@ -636,6 +649,27 @@ const finalData = {
       },
     ]
   },
+  [supportedCountryCodes.BM]: {
+    code: supportedCountryCodes.BM,
+    name: getName(supportedCountryCodes.BM),
+    list: [
+      {
+        regex: /^[A-Z]\d{4}$/,
+        example: 'O9678',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^\d{5}$/,
+        example: '12345',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-Z]{2}\d{3}$/,
+        example: 'AA123',
+        type: regexType.OLD,
+      },
+    ]
+  },
   [supportedCountryCodes.CH]: {
     code: supportedCountryCodes.CH,
     name: getName(supportedCountryCodes.CH),
@@ -683,6 +717,22 @@ const finalData = {
         example: 'M-6320-YN',
         type: regexType.OLD,
       }
+    ]
+  },
+  [supportedCountryCodes.FK]: {
+    code: supportedCountryCodes.FK,
+    name: getName(supportedCountryCodes.FK),
+    list: [
+      {
+        regex: /^[A-Z]\s?\d{3}\s?[A-Z]$/,
+        example: 'F458B',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[A-Z]\s?\d{3}$/,
+        example: 'F123',
+        type: regexType.OLD,
+      },
     ]
   },
   [supportedCountryCodes.FR]: {
@@ -748,6 +798,22 @@ const finalData = {
       },
     ]
   },
+  [supportedCountryCodes.GI]: {
+    code: supportedCountryCodes.GI,
+    name: getName(supportedCountryCodes.GI),
+    list: [
+      {
+        regex: /^G\s?\d{4}\s?[A-Z]$/,
+        example: 'G 3624 C',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^G\s?\d{1,5}$/,
+        example: 'G 1',
+        type: regexType.OLD,
+      },
+    ]
+  },
   [supportedCountryCodes.IE]: {
     code: supportedCountryCodes.IE,
     name: getName(supportedCountryCodes.IE),
@@ -780,6 +846,22 @@ const finalData = {
       }
     ]
   },
+  [supportedCountryCodes.KY]: {
+    code: supportedCountryCodes.KY,
+    name: getName(supportedCountryCodes.KY),
+    list: [
+      {
+        regex: /^\d{1,3}\s\d{3}$/,
+        example: '2 930',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^CI\d{4}$/,
+        example: 'CI3698',
+        type: regexType.OLD,
+      }
+    ]
+  },
   [supportedCountryCodes.LI]: {
     code: supportedCountryCodes.LI,
     name: getName(supportedCountryCodes.LI),
@@ -798,6 +880,17 @@ const finalData = {
       {
         regex: /^[A-Z]{2}\s?\d{4}$/,
         example: 'KS 9412',
+        type: regexType.CURRENT,
+      }
+    ]
+  },
+  [supportedCountryCodes.MS]: {
+    code: supportedCountryCodes.MS,
+    name: getName(supportedCountryCodes.MS),
+    list: [
+      {
+        regex: /^M\s\d{1,4}$/,
+        example: 'M 9412',
         type: regexType.CURRENT,
       }
     ]
@@ -908,6 +1001,67 @@ const finalData = {
         example: 'AA-00-00',
         type: regexType.OLD,
       }
+    ]
+  },
+  [supportedCountryCodes.SH]: {
+    code: supportedCountryCodes.SH,
+    name: getName(supportedCountryCodes.SH),
+    list: [
+      {
+        regex: /^\d{1,4}$/,
+        example: '1234',
+        type: regexType.CURRENT,
+        description: 'Saint Helena',
+      },
+      {
+        regex: /^[A-Z]\s?\d{1,4}$/,
+        example: 'A1234',
+        type: regexType.CURRENT,
+        description: 'Ascension Island',
+      },
+      {
+        regex: /^T\.?D\.?C\.?\s?\d{1,3}$/,
+        example: 'T.D.C. 123',
+        type: regexType.CURRENT,
+        description: 'Tristan da Cunha',
+      },
+    ]
+  },
+  [supportedCountryCodes.TC]: {
+    code: supportedCountryCodes.TC,
+    name: getName(supportedCountryCodes.TC),
+    list: [
+      {
+        regex: /^\d{5}$/,
+        example: '12345',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^TC\s\d{1,4}$/,
+        example: 'TC 724',
+        type: regexType.CURRENT,
+      },
+    ]
+  },
+  [supportedCountryCodes.VG]: {
+    code: supportedCountryCodes.VG,
+    name: getName(supportedCountryCodes.VG),
+    list: [
+      {
+        regex: /^PV\s?\d{5}$/,
+        example: 'PV 12345',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^VI\s?\d{4}$/,
+        example: 'VI 1234',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^\d{5}$/,
+        example: '12356',
+        type: regexType.OLD,
+      },
     ]
   },
 };
