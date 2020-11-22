@@ -30,6 +30,9 @@ export const supportedCountryCodes = {
   [allCountries.BF]: allCountries.BF,
   [allCountries.BG]: allCountries.BG,
   [allCountries.BH]: allCountries.BH,
+  [allCountries.BI]: allCountries.BI,
+  [allCountries.BJ]: allCountries.BJ,
+  [allCountries.BL]: allCountries.BL,
   [allCountries.CH]: allCountries.CH,
   [allCountries.DE]: allCountries.DE,
   [allCountries.DK]: allCountries.DK,
@@ -556,6 +559,79 @@ const finalData = {
       {
         regex: /^[ء-ي]\d{3}[ء-ي]$/,
         example: 'د191د',
+        type: regexType.OLD,
+      },
+    ]
+  },
+  [supportedCountryCodes.BI]: {
+    code: supportedCountryCodes.BI,
+    name: getName(supportedCountryCodes.BI),
+    list: [
+      {
+        regex: /^[A-Z]\s?\d{4}\s?[A-Z]$/,
+        example: 'C 6492 A',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[A-Z]{2}\s?\d{4}$/,
+        example: 'HA 4278',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[A-Z]{2}(\s|\.)?\d{4}$/,
+        example: 'BB.1096',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^[A-Z](\s|\.)?\d{4}$/,
+        example: 'B.7701',
+        type: regexType.OLD,
+      },
+    ]
+  },
+  [supportedCountryCodes.BJ]: {
+    code: supportedCountryCodes.BJ,
+    name: getName(supportedCountryCodes.BJ),
+    list: [
+      {
+        regex: /^[A-Z]{2}\s?\d{4}$/,
+        example: 'AE8888',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^[A-Z]\s?\d{4}$/,
+        example: 'X 4664',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^\d{4}\s?[A-Z]\d\s?[A-Z]{2}$/,
+        example: '5547 B2 DY',
+        type: regexType.OLD,
+      },
+    ]
+  },
+  [supportedCountryCodes.BL]: {
+    code: supportedCountryCodes.BL,
+    name: getName(supportedCountryCodes.BL),
+    list: [
+      {
+        regex: /^\d{3}\s[A-Z]$/,
+        example: '170 E',
+        type: regexType.CURRENT,
+      },
+      {
+        regex: /^\d{4}\s?[A-Z]{2}\s?971$/,
+        example: '6421SB971',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^\d{3}\s?[A-Z]{3}\s?971$/,
+        example: '337 ZYA 971',
+        type: regexType.OLD,
+      },
+      {
+        regex: /^971\s?[A-Z]{2}\s?\d{3}$/,
+        example: '971 SB 242',
         type: regexType.OLD,
       },
     ]

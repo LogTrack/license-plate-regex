@@ -12,7 +12,7 @@ describe('Validate Data',() => {
 
   test('Verify that all countries have at least one CURRENT plate format', () => {
     Object.keys(supportedCountryCodes).forEach(countryCode => {
-      expect(data[countryCode].list.filter(item => item.type === regexType.CURRENT).length).toBeGreaterThanOrEqual(1);
+      expect(data[countryCode]?.list.filter(item => item.type === regexType.CURRENT).length).toBeGreaterThanOrEqual(1);
     });
   });
 });
